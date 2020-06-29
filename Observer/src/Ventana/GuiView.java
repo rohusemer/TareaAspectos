@@ -42,14 +42,17 @@ public class GuiView extends JPanel {
 		// Crea un nuevo boton sobre el panel con la llamada al evento ColorListener
 		// y lo añade al panel
 		this.Btn1 = new JButton("Blue");
+		this.Btn1.setBackground(Color.BLUE);
 		this.Btn1.addActionListener(new ColorListener());
 		this.guiPanel.add(this.Btn1);
 		
 		this.Btn2 = new JButton("Black");
+		this.Btn2.setBackground(Color.BLACK);
 		this.Btn2.addActionListener(new ColorListener());
 		this.guiPanel.add(this.Btn2);
 		
 		this.Btn3 = new JButton("Red");
+		this.Btn3.setBackground(Color.RED);
 		this.Btn3.addActionListener(new ColorListener());
 		this.guiPanel.add(this.Btn3);
 		
