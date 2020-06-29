@@ -43,17 +43,17 @@ public class GuiView extends JPanel {
 		// y lo añade al panel
 		this.Btn1 = new JButton("Blue");
 		this.Btn1.setBackground(Color.BLUE);
-		this.Btn1.addActionListener(new ColorListener());
+		this.Btn1.addActionListener(new BlueColorListener());
 		this.guiPanel.add(this.Btn1);
 		
 		this.Btn2 = new JButton("Black");
 		this.Btn2.setBackground(Color.BLACK);
-		this.Btn2.addActionListener(new ColorListener());
+		this.Btn2.addActionListener(new BlackColorListener());
 		this.guiPanel.add(this.Btn2);
 		
 		this.Btn3 = new JButton("Red");
 		this.Btn3.setBackground(Color.RED);
-		this.Btn3.addActionListener(new ColorListener());
+		this.Btn3.addActionListener(new RedColorListener());
 		this.guiPanel.add(this.Btn3);
 		
 		// Add both the new panel and the View to myself
@@ -61,10 +61,10 @@ public class GuiView extends JPanel {
 		add(this.guiPanel, BorderLayout.SOUTH);
 	}
 	/** Evento que cambia el color del panel central cuando se da click en uno de los botones
-	 *  EL color cambia con repecto al nombre de cada boton
+	 *  EL color cambia con respecto al nombre de cada boton
 	 * 	Presenta por consola el color seleccionado
 	 */
-	private class ColorListener implements ActionListener {
+	/*private class ColorListener implements ActionListener {
 		
 		public void actionPerformed(final ActionEvent e) {
 			Object source = e.getSource();
@@ -83,6 +83,45 @@ public class GuiView extends JPanel {
 				GuiView.this.view.requestFocus();
 			}
 		}
-	}
+	}*/
+	
+	public class BlueColorListener implements ActionListener{
+		public void actionPerformed(final ActionEvent e) {
+			Object source = e.getSource();
 
+			if (source == GuiView.this.Btn1) {
+				GuiView.this.colorPanel.setBackground(Color.BLUE);
+				GuiView.this.view.requestFocus();
+				//System.out.println("EL color es: Blue" );
+			
+		}
+	}
+	}
+		
+	private class BlackColorListener implements ActionListener{
+		public void actionPerformed(final ActionEvent e) {
+			Object source = e.getSource();
+	
+			if (source == GuiView.this.Btn2) {
+				GuiView.this.colorPanel.setBackground(Color.BLUE);
+				GuiView.this.view.requestFocus();
+						//System.out.println("EL color es: Black" );
+					
+			}
+		}
+	}
+			
+	private class RedColorListener implements ActionListener{
+		public void actionPerformed(final ActionEvent e) {
+			Object source = e.getSource();
+
+			if (source == GuiView.this.Btn3) {
+			GuiView.this.colorPanel.setBackground(Color.BLUE);
+			GuiView.this.view.requestFocus();
+						//System.out.println("EL color es: Red" );
+					
+			}
+		}
+	}
+			
 }
