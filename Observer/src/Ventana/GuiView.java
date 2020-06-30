@@ -40,7 +40,7 @@ public class GuiView extends JPanel {
 		this.guiPanel.setBackground(Color.lightGray);
 		
 		// Crea un nuevo boton sobre el panel con la llamada al evento ColorListener
-		// y lo añade al panel
+		// y lo aï¿½ade al panel
 		this.Btn1 = new JButton("Blue");
 		this.Btn1.setBackground(Color.BLUE);
 		this.Btn1.addActionListener(new BlueColorListener());
@@ -86,10 +86,14 @@ public class GuiView extends JPanel {
 	}*/
 	
 	public class BlueColorListener implements ActionListener{
+		public void notificarBlue() {
+			System.out.println("REGISTRANDO");
+		}
 		public void actionPerformed(final ActionEvent e) {
 			Object source = e.getSource();
 
 			if (source == GuiView.this.Btn1) {
+				notificarBlue(); 
 				GuiView.this.colorPanel.setBackground(Color.BLUE);
 				GuiView.this.view.requestFocus();
 				//System.out.println("EL color es: Blue" );
@@ -99,11 +103,15 @@ public class GuiView extends JPanel {
 	}
 		
 	private class BlackColorListener implements ActionListener{
+		public void notificarBlack() {
+			System.out.println("REGISTRANDO");
+		}
 		public void actionPerformed(final ActionEvent e) {
 			Object source = e.getSource();
 	
 			if (source == GuiView.this.Btn2) {
-				GuiView.this.colorPanel.setBackground(Color.BLUE);
+				notificarBlack();
+				GuiView.this.colorPanel.setBackground(Color.BLACK);
 				GuiView.this.view.requestFocus();
 						//System.out.println("EL color es: Black" );
 					
@@ -112,11 +120,15 @@ public class GuiView extends JPanel {
 	}
 			
 	private class RedColorListener implements ActionListener{
+		public void notificarRed() {
+			System.out.println("REGISTRANDO");
+		}
 		public void actionPerformed(final ActionEvent e) {
 			Object source = e.getSource();
 
 			if (source == GuiView.this.Btn3) {
-			GuiView.this.colorPanel.setBackground(Color.BLUE);
+			notificarRed(); 
+			GuiView.this.colorPanel.setBackground(Color.RED);
 			GuiView.this.view.requestFocus();
 						//System.out.println("EL color es: Red" );
 					

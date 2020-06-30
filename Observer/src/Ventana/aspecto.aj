@@ -1,5 +1,6 @@
 package Ventana;
 
+import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -12,12 +13,8 @@ import java.io.PrintWriter;
 
 
 public aspect aspecto {
-	pointcut callSay(): call(* *.requestFocus()); 
-    after() : callSay() {
-    	System.out.println("Before call say" );
-    }
-
-    pointcut successBlue(): call(* BlueColorListener*(..));
+	
+    pointcut successBlue(): call(* *.notificarBlue());
     after(): successBlue(){
     	
     	    	        
@@ -60,7 +57,7 @@ public aspect aspecto {
     	       
     	
     }
-    pointcut successBlack(): call(* BlackColorListener*(..));
+    pointcut successBlack(): call(* *.notificarBlack());
     after(): successBlack(){
     	
     	    	        
@@ -104,7 +101,7 @@ public aspect aspecto {
     	
     }
     
-    pointcut successRed(): call(* RedColorListener*(..));
+    pointcut successRed(): call(* *.notificarRed());
     after(): successRed(){
     	
     	    	        
